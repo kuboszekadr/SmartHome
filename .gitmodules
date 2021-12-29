@@ -1,0 +1,9 @@
+[submodule "app/solarman"]
+	path = app/solarman
+	url = https://github.com/kuboszekadr/SmartHome-SolarMan
+[submodule "app/database"]
+	path = app/database
+	url = https://github.com/kuboszekadr/SmartHome-Database
+[submodule "app/backend"]
+	path = app/backend
+	url = https://github.com/kuboszekadr/SmartHome-Backend
