@@ -2,28 +2,28 @@ version: '3.8'
 
 services: 
     database:
-        build: ./SmartHome-Database
+        build: ./app/database
         volumes: 
             - database:/var/lib/postgresql/11/main
             - ~/SmartHome/database/backups:/backups
         ports:
             - 5432:5432
         env_file:
-            - ./SmartHome-Database/.env
+            - ./app/database/.env
         container_name: database
     backend:
-        build: ./SmartHome-Backend
+        build: ./app/backend
         ports:
             - 8080:8000
         env_file: 
-            - ./SmartHome-Backend/.env
+            - ./app/backend/.env
         container_name: backend
         depends_on:
             - database
     solarman:
-        build: ./SmartHome-SolarMan
+        build: ./app/solarman
         env_file:
-            - ./SmartHome-SolarMan/.env
+            - ./app/solarman/.env
         container_name: solarman
         depends_on:
             - backend
