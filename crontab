@@ -1,0 +1,8 @@
+# downloads solar-pane data
+0-55/5 * * * * docker exec solarman python main.py
+
+# download eneregy usage data
+0 12 * * * docker exec tauron python main.py
+
+# make sure to create and config .pgpass before task is runs
+# 0 0 * * * su postgres -c "pg_dumpall -U postgres -h localhost -p 5432 -a" > "~/SmartHome/Database/backups/data.sql"
