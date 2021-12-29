@@ -11,9 +11,9 @@ At the moment app is running on RPi4 8gb and for that machine it has been develo
 
 - Database - running on PostgresSQL 11, a central part of the system where all data is stored,
 - Backend - build on Flask, it is a wrapper for SQL and provides endpoint for all sensors and Front-End,
-- FrontEnd - build on Flask, this provies user-friendly GUI,
-- Tauron - a ETL service for downloading data from Tauron energy provider,
-- SolarMan - a ETL service for downloading data from solar panels.
+- FrontEnd - build on Flask, this provies user-friendly GUI, (disabled at the moment)
+- Tauron - a ETL service for downloading data from Tauron energy provider,(disabled at the moment)
+- SolarMan - a ETL service for downloading data from solar panels. (disabled at the moment)
 
 
 ## Building the app
