@@ -20,13 +20,5 @@ services:
         container_name: backend
         depends_on:
             - database
-    solarman:
-        build: ./app/solarman
-        env_file:
-            - ./app/solarman/.env
-        container_name: solarman
-        depends_on:
-            - backend
-        tty: true
 volumes: 
     database:
