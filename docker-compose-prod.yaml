@@ -1,0 +1,27 @@
+version: '3.8'
+
+services: 
+    database:
+        build: ./app/database
+        volumes: 
+            - ./app/database:/var/lib/postgresql/11/main
+            - ./app/database/backups:/backups
+        ports:
+            - 5432:5432
+        env_file:
+            - ./app/database/.env
+        container_name: database
+    backend:
+        build: ./app/backend
+        volumes:
+            - ./app/backend:/SmartHome-Backend
+        ports:
+            - 500:8000
+        env_file: 
+            - ./app/backend/.env
+        container_name: backend
+        depends_on:
+            - database
+volumes: 
+    database:
+    backend:
