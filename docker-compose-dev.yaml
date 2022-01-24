@@ -7,13 +7,16 @@ services:
             - 5433:5432
         env_file:
             - ./app/database/.env
-        container_name: database
+        container_name: databasedev
     backend:
         build: ./app/backend
         ports:
             - 8081:8000
         env_file: 
             - ./app/backend/.env
-        container_name: backend
+        container_name: backenddev
         depends_on:
             - database
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - /etc/timezone:/etc/timezone:ro
